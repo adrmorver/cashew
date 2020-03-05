@@ -4,4 +4,5 @@ python:
 install:
   - pip install -r requirements.txt
 script:
+  - cd treeD
   - python manage.py test profiles
