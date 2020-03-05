@@ -6,6 +6,7 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install coverage
+  - pip install python-coveralls
 before_script:
   - mysql -u root -e 'CREATE DATABASE treeD;'
   - mysql -u root -e "CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'usuario';"
