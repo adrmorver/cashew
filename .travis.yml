@@ -16,5 +16,4 @@ script:
   - coverage xml
 after_success:
   - coveralls
-  - export CODACY_PROJECT_TOKEN=a708c3b2838a4117a458b1b00d3eb652
   - python-codacy-coverage -r coverage.xml
