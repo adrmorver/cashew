@@ -5,6 +5,7 @@ python:
   - "3.6"
 install:
   - pip install -r requirements.txt
+  - pip install coverage
   - pip install codacy-coverage
 before_script:
   - mysql -u root -e 'CREATE DATABASE treeD;'
@@ -15,5 +16,4 @@ script:
   - coverage run --source='.' manage.py test
   - coverage xml
 after_success:
-  - coveralls
   - python-codacy-coverage -r coverage.xml
