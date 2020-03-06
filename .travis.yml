@@ -6,13 +6,15 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install coverage
-  - pip install python-coveralls
+  - pip install coveralls-python
+  - pip install coveralls
 before_script:
   - mysql -u root -e 'CREATE DATABASE treeD;'
   - mysql -u root -e "CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'usuario';"
   - mysql -u root -e "GRANT ALL PRIVILEGES ON * . * TO 'usuario'@'localhost';"
   - cd treeD
 script:
-  - coverage run --source='.' manage.py test main
+  - coverage run --source='.' manage.py test
 after_success:
+  - coveralls -v
   - coveralls
